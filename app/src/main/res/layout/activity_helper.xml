@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/defaul_bg"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.百姓瞭望台是什么？"
+            android:textColor="@color/default_textcolor"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <include layout="@layout/default_line"/>
+
+        <TextView
+            android:paddingBottom="13dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/helper_content1"
+            android:textColor="@color/default_textcolor"
+            android:textSize="13dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2.如何加入联盟商家？"
+            android:textColor="@color/default_textcolor"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <include layout="@layout/default_line"/>
+
+        <TextView
+            android:paddingBottom="13dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/helper_content2"
+            android:textColor="@color/default_textcolor"
+            android:textSize="13dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+    <include layout="@layout/default_line"/>
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+        <Button
+            android:text="意见反馈"
+            android:textSize="18dp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@color/white"
+            android:layout_width="200dp"
+            android:layout_height="36dp"/>
+    </LinearLayout>
+</LinearLayout>

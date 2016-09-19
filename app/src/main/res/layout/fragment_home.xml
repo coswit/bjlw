@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bxlwt.www.bxlwt.view.StickyNavLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                          xmlns:app="http://schemas.android.com/apk/res-auto"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:background="@color/defaul_bg"
+                                          android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@id/id_stickynavlayout_topview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_banner_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/vp_banner_homeFragment"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#eeeeee"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_home_a"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_1"
+                        style="@style/homeGridText"
+                        android:text="个护美妆"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_b"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_2"
+                        style="@style/homeGridText"
+                        android:text="家居日常"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_c"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_3"
+                        style="@style/homeGridText"
+                        android:text="食品酒水"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_d"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_4"
+                        style="@style/homeGridText"
+                        android:text="母婴玩具"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginBottom="0.25dp"
+                android:layout_marginTop="0.25dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_home_e"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_5"
+                        style="@style/homeGridText"
+                        android:text="服饰鞋帽"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_f"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_6"
+                        style="@style/homeGridText"
+                        android:text="手机数码"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_g"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0.25dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_7"
+                        style="@style/homeGridText"
+                        android:text="家用电器"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_disc_others"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:scaleType="fitXY"
+                        android:id="@+id/iv_homeGrid_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeGrid_8"
+                        style="@style/homeGridText"
+                        android:text="其他分类"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ad_logo"/>
+
+            <com.bxlwt.www.bxlwt.view.UpDownViewFlipper
+                android:id="@+id/flipper_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            </com.bxlwt.www.bxlwt.view.UpDownViewFlipper>
+
+        </LinearLayout>
+        <View
+            android:background="@color/defaul_bg"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@id/id_stickynavlayout_indictor"
+        style="@style/MyTabLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:tabGravity="fill"
+        app:tabMode="fixed"/>
+
+    <include layout="@layout/default_line"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/id_stickynavlayout_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</com.bxlwt.www.bxlwt.view.StickyNavLayout>

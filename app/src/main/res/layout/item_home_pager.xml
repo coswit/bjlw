@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginBottom="0.5dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="9dp"
+    android:paddingLeft="@dimen/common_padding_size"
+    android:paddingRight="@dimen/common_padding_size"
+    android:paddingTop="9dp">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.2">
+
+        <ImageView
+            android:id="@+id/iv_homepager_item_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/banner1"/>
+
+        <TextView
+            android:id="@+id/tv_homepager_item_type"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/orange"
+            android:text="限时免费"
+            android:textSize="11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4.1"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="7dp">
+
+        <TextView
+            android:id="@+id/tv_item_pager_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="秋季家装灯饰特场专用券"
+            android:textColor="#4c4c4c"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/item_home_left"/>
+
+            <TextView
+                android:id="@+id/tv_homepager_item_leftNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:text="2413张"
+                android:textColor="#999999"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_homepager_item_price"
+                    android:maxLines="1"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="3dp"
+                    android:text="200"
+                    android:textColor="@color/orange"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:maxLines="1"
+                    android:layout_marginBottom="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="3dp"
+                    android:text="代金券"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_homepager_item_consumed"
+                android:paddingRight="15dp"
+                android:layout_marginBottom="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7586人领用"
+                android:textColor="#999999"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:paddingBottom="7dp"
+                android:src="@drawable/item_home_dot"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

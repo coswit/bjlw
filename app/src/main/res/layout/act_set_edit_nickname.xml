@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/defaul_bg"
+              android:fitsSystemWindows="true"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:orientation="vertical"
+
+              android:paddingLeft="20dp"
+              android:paddingRight="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:text="昵称为2-12个字符，支持中英文、数字"
+        android:textColor="@color/default_textcolor"
+        android:textSize="12sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <EditText
+            android:id="@+id/et_edit_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_set_edit"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:inputType="text"
+            android:hint="输入要设置的昵称"
+            android:paddingLeft="6dp"
+            android:textColor="#c1c1c1"
+            android:textColorHint="#c1c1c1"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/iv_eidt_clearNickname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="6dp"
+            android:src="@drawable/set_edit_nickname"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_edit_submitNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_shape"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="19sp"/>
+</LinearLayout>

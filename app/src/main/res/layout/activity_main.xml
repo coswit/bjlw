@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/tabContainer"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></FrameLayout>
+
+    <View
+        android:background="@color/default_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+    <android.support.v4.app.FragmentTabHost
+        android:background="@color/white"
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.app.FragmentTabHost>
+</LinearLayout>

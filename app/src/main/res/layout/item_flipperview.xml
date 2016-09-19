@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:src="@drawable/ic_flipper"/>
+
+    <TextView
+        android:id="@+id/tv_item_popText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="天降红包天降红包天降红包天降红包"
+        android:textColor="#666666"
+        android:textSize="13sp"/>
+</LinearLayout>

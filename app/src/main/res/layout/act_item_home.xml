@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/defaul_bg"
+              android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp">
+
+                        <ImageView
+                            android:id="@+id/iv_homeItemDetail_topIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/item_pager_top"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparentblak"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingTop="28dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal|bottom"
+                                android:orientation="horizontal"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="￥"
+                                    android:textColor="@color/white"
+                                    android:textSize="44sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_homeListDetail_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="200"
+                                    android:textColor="@color/white"
+                                    android:textSize="80sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="4dp"
+                                    android:maxLines="1"
+                                    android:paddingBottom="4dp"
+                                    android:text="代金券"
+                                    android:textColor="@color/white"
+                                    android:textSize="44sp"/>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="6dp"
+                                android:background="#dddddd"/>
+
+                            <TextView
+                                android:id="@+id/tv_homeListDetail_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:gravity="center_horizontal"
+                                android:maxLines="1"
+                                android:text="有效期：2016.09.01—2016.09.07"
+                                android:textColor="#dddddd"
+                                android:textSize="18dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/common_padding_size"
+                        android:paddingRight="@dimen/common_padding_size">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_shop"/>
+
+                            <TextView
+                                android:id="@+id/tv_homeListDetail_shopName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="7dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="PARLOUR旗舰店"
+                                android:textColor="#666666"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+
+                        <include layout="@layout/default_line"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_location"/>
+
+                            <TextView
+                                android:id="@+id/tv_homeListDetail_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="7dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="北京市大兴区黄村水晶之星1603"
+                                android:textColor="#666666"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+
+                        <include layout="@layout/default_line"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_homeItemDetail_diaNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_phone"/>
+
+                            <TextView
+                                android:id="@+id/tv_homeListDetail_phoneNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="7dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="18800008888"
+                                android:textColor="#666666"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_homeItemDetail_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="秋季家装灯饰特场专用券"
+                        android:textColor="#4c4c4c"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeItemDetail_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/common_padding_size"
+                        android:paddingRight="@dimen/common_padding_size"
+                        android:text="PARLOUR - 北京大兴旗舰店“三周年”庆典！限时免费
+赠送200元代金券，持有“中国百万商家联盟”万通卡到
+店再打8折！活动时间有限，分享还有意外的惊喜哦！"
+                        android:textColor="#666666"
+                        android:textSize="14sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.bxlwt.www.bxlwt.view.AutoMeasureImageView
+                            android:id="@+id/iv_homeItemDetail_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/p1"/>
+
+                        <com.bxlwt.www.bxlwt.view.AutoMeasureImageView
+                            android:id="@+id/iv_homeItemDetail_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/p2"/>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_padding_size"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_get"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeItemDetail_beget"
+                        android:maxLines="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="6dp"
+                        android:text="7586人领取"
+                        android:textColor="#c1c1c1"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_left"/>
+
+                    <TextView
+                        android:maxLines="1"
+                        android:id="@+id/tv_homeItemDetail_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="6dp"
+                        android:text="7586人张"
+
+                        android:textColor="#c1c1c1"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btn_homeItemDetail_tip"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_card_tip_get"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/defaul_bg"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/orange">
+
+        <ImageView
+            android:id="@+id/iv_search_revert"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/ic_revert"/>
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/sv_actSearch"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_bar"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="热门搜索"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+    <LinearLayout
+        android:background="@color/white"
+        android:paddingBottom="13dp"
+        android:paddingLeft="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tag_searchAct"
+            android:background="@color/white"
+            app:max_select="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>

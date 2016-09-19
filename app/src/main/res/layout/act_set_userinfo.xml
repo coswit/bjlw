@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/defaul_bg"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_setAct_userInfo_editIcon"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="头像"
+            android:textColor="@color/default_textcolor"
+            android:textSize="14dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_setUserInfo"
+            android:layout_marginRight="12dp"
+            android:layout_width="60dp"
+            app:civ_border_color="@color/default_textcolor"
+            app:civ_border_width="0.5dp"
+            android:src="@mipmap/profile"
+            android:layout_height="60dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_setAct_userInfo_editNickname"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="昵称"
+                android:textColor="@color/default_textcolor"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tv_setUserInfo_nickname"
+                android:textSize="13sp"
+                android:text="abcdef"
+                android:maxLength="33"
+                android:layout_marginRight="12dp"
+                android:textColor="#c1c1c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next"/>
+        </LinearLayout>
+
+        <include layout="@layout/default_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_setAct_userInfo_editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="手机号码"
+                android:textColor="@color/default_textcolor"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/tv_setUserInfo_mobile"
+                android:text="未绑定"
+                android:textSize="13sp"
+                android:maxLength="33"
+                android:layout_marginRight="12dp"
+                android:textColor="#c1c1c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

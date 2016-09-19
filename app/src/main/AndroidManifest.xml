@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bxlwt.www.bxlwt">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyAppTheme">
+        <activity android:name=".activity.MainActivity" android:launchMode="singleTask" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginAct"
+            android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.RegisterAct"
+            android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SearchAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.HelperAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SetAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MyCouponAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MyMessage" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MyIntergrateAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SetUserInfoAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SetEditNickname" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SetEditPhone" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.HomeItemAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.HomeClassfyAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.HeadlinesContentAct" android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>
