@@ -1,5 +1,6 @@
 package com.bxlwt.www.bxlwt.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bxlwt.www.bxlwt.R;
 import com.bxlwt.www.bxlwt.Utils.JsonHelper;
+import com.bxlwt.www.bxlwt.Utils.Keys;
+import com.bxlwt.www.bxlwt.activity.DiscveryItemAct;
 import com.bxlwt.www.bxlwt.base.BaseFragment;
 import com.bxlwt.www.bxlwt.bean.DiscoveryBean;
 import com.bxlwt.www.bxlwt.http.NetUrls;
@@ -125,15 +128,15 @@ public class DiscoveryFragment extends BaseFragment {
             }
 
 //            //条目点击跳转
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(mContext, HomeItemAct.class);
-//                    intent.putExtra(Keys.HOME_LIST_ITEM_ID, mDatas.get(position).getId());
-//                    mContext.startActivity(intent);
-//                    ((Activity) mContext).overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, DiscveryItemAct.class);
+                    intent.putExtra(Keys.DISCOVERY_DETAIL_HTML, mDatas.get(position).getId());
+                    mActivity.startActivity(intent);
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                }
+            });
 
 
         }

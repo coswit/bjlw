@@ -72,7 +72,7 @@ public class SetAct extends BaseSetAct {
     }
 
 
-    @OnClick({R.id.ll_setAct_userInfo, R.id.ll_setAct_clearCache, R.id.ll_setact_signOut})
+    @OnClick({R.id.ll_setAct_userInfo, R.id.ll_setAct_clearCache, R.id.ll_setact_signOut,R.id.ll_setAct_aboutus})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_setAct_userInfo://个人资料
@@ -85,6 +85,11 @@ public class SetAct extends BaseSetAct {
                 overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
                 break;
             case R.id.ll_setAct_clearCache:
+                break;
+            case R.id.ll_setAct_aboutus://关于我们
+                mIntent = new Intent(mContext,AboutusAct.class);
+                startActivity(mIntent);
+                overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
                 break;
             case R.id.ll_setact_signOut://退出登录
                 if (mUserInfo != null) {

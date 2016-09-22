@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -18,13 +19,15 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bxlwt.www.bxlwt.R;
-import com.bxlwt.www.bxlwt.Utils.GlideHelper;
 import com.bxlwt.www.bxlwt.Utils.JsonHelper;
 import com.bxlwt.www.bxlwt.Utils.Keys;
+import com.bxlwt.www.bxlwt.Utils.SharedPreferencesUtil;
+import com.bxlwt.www.bxlwt.activity.BannerItemAct;
 import com.bxlwt.www.bxlwt.activity.HeadlinesContentAct;
 import com.bxlwt.www.bxlwt.activity.HomeClassfyAct;
 import com.bxlwt.www.bxlwt.base.BaseFragment;
 import com.bxlwt.www.bxlwt.base.BasePager;
+import com.bxlwt.www.bxlwt.bean.BannerBean;
 import com.bxlwt.www.bxlwt.bean.HomeGridBean;
 import com.bxlwt.www.bxlwt.bean.HomeHeadLinesBean;
 import com.bxlwt.www.bxlwt.bean.HomeListBean;
@@ -46,10 +49,12 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
+
+
 public class HomeFragment extends BaseFragment {
 
     @BindView(R.id.vp_banner_homeFragment)
-    ViewPager vpBannerHomeFragment;
+    ViewPager mBannerViewpager;
     @BindView(R.id.ll_dot)
     LinearLayout llDot;
     @BindView(R.id.id_stickynavlayout_indictor)
@@ -109,10 +114,11 @@ public class HomeFragment extends BaseFragment {
     @BindView(R.id.ll_home_disc_others)
     LinearLayout llHomeDiscOthers;
     //临时存放图片的集合
-    private int[] pictures = {R.mipmap.banner1, R.mipmap.banner2, R.mipmap.banner3};
+//    private int[] pictures = {R.mipmap.banner1, R.mipmap.banner2, R.mipmap.banner3};
 
     private Activity mActivity;
     private HomeGridBean mGridBean;
+    private List<BannerBean.DataBean> mBannerDatas;
 
     @Override
     protected View initView() {
@@ -122,7 +128,7 @@ public class HomeFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
 
-        viewpagerCarousel();
+//        viewpagerCarousel();
 //        initTab();
 //        initFlipper();
 //        initListDatas();
@@ -132,9 +138,70 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initData() {
+        String city = SharedPreferencesUtil.getString(mContext, Keys.CITY_PICK, null);
+        if (city != null) {
+            mCity.setText(city);
+        } else {
+            mCity.setText("唐山");
+        }
+
         showLoadingView();
         initListDatas();
-        initFlipperDatas();
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
+
+
+    private void initBannerDatas() {
+        String requestUrl = NetUrls.HOST + NetUrls.HOME_BANNER;
+        RequestParams params = new RequestParams(requestUrl);
+        params.setConnectTimeout(NetUrls.NET_OUT_TIMES);
+        Logger.d(params);
+        x.http().get(params, new Callback.CacheCallback<String>() {
+
+            @Override
+            public boolean onCache(String result) {
+                return true;
+            }
+
+            @Override
+            public void onSuccess(String result) {
+                if (result != null) {
+//                    Logger.d(result);
+                    BannerBean bean = JsonHelper.json2Bean(result, BannerBean.class);
+                    if (bean.getCode() == 200) {
+                        mBannerDatas = bean.getData();
+                        if (mBannerDatas != null) {
+                            viewpagerCarousel();
+                            showInitView();
+                        }
+
+
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                showFailView();
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+                showFailView();
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
     }
 
     private void initFlipperDatas() {
@@ -143,7 +210,6 @@ public class HomeFragment extends BaseFragment {
         params.setConnectTimeout(NetUrls.NET_OUT_TIMES);
         Logger.d(params);
         x.http().get(params, new Callback.CacheCallback<String>() {
-            private String result = null;
 
             @Override
             public boolean onCache(String result) {
@@ -213,10 +279,11 @@ public class HomeFragment extends BaseFragment {
                 viewFlipper.addView(itemView);
                 itemText.setText(list.get(i));
             }
+            viewFlipper.startFlipping();
+            initBannerDatas();
+
         }
 
-        viewFlipper.startFlipping();
-        showInitView();
     }
 
     private void initGridDatas() {
@@ -252,6 +319,7 @@ public class HomeFragment extends BaseFragment {
                         Glide.with(mContext).load(NetUrls.HOME_LIST_IMAGE + mGridBean.getData().get(6).getImg()).into(ivHomeGrid7);
                         Glide.with(mContext).load(NetUrls.HOME_LIST_IMAGE + mGridBean.getData().get(7).getImg()).into(ivHomeGrid8);
 
+                        initFlipperDatas();
 
                 }
                 }
@@ -433,13 +501,6 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
 
     class MyPagerAdapter extends PagerAdapter {
@@ -455,12 +516,23 @@ public class HomeFragment extends BaseFragment {
         }
 
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(ViewGroup container, final int position) {
             ImageView imageView = new ImageView(mContext);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            imageView.setImageResource(pictures[position % pictures.length]);
-            GlideHelper.loadImageFromeRes(mContext, pictures[position % pictures.length], imageView);
+//            imageView.setImageResource(mBannerDatas[position % mBannerDatas.size()]);
+//            GlideHelper.loadImageFromeRes(mContext, pictures[position % mBannerDatas.size()], imageView);
+            Glide.with(mContext).load(mBannerDatas.get(position % mBannerDatas.size()).getImgurl()).into(imageView);
             container.addView(imageView);
+            //banner条目点击
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, BannerItemAct.class);
+                    intent.putExtra(Keys.HOME_BANNER_ITEM,mBannerDatas.get(position % mBannerDatas.size()).getUrl());
+                    startActivity(intent);
+                    mActivity.overridePendingTransition(R.anim.enter_anim,R.anim.exit_anim);
+                }
+            });
             return imageView;
         }
 
@@ -475,11 +547,12 @@ public class HomeFragment extends BaseFragment {
      * 轮播图
      */
     private void viewpagerCarousel() {
-        vpBannerHomeFragment.setAdapter(new MyPagerAdapter());
+        mBannerViewpager.setAdapter(new MyPagerAdapter());
         //让ViewPager默认选中比较大的一页，这样的话可以实现往右边滑动很多次,注意：此处最好不要设置过大，否则可能造成ViewPager滑动卡顿
-        vpBannerHomeFragment.setCurrentItem(pictures.length * 10000);
+        mBannerViewpager.setCurrentItem(mBannerDatas.size() * 10000);
+        llDot.removeAllViews();
         //初始化dot的布局
-        for (int i = 0; i < pictures.length; i++) {
+        for (int i = 0; i < mBannerDatas.size(); i++) {
             //创建点
             View dotView = new View(mContext);
             //设置点的宽高
@@ -491,8 +564,10 @@ public class HomeFragment extends BaseFragment {
             //将view对象添加到ll_dot布局中
             llDot.addView(dotView);
         }
+
         //循环更新点选择
-        vpBannerHomeFragment.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+        mBannerViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -501,9 +576,9 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onPageSelected(int position) {
                 //获取ViewPager当前选中的是第几页
-                int currentItem = vpBannerHomeFragment.getCurrentItem() % pictures.length;
+                int currentItem = mBannerViewpager.getCurrentItem() % mBannerDatas.size();
                 //根据当前是第几页，让第几个点设置白色点
-                for (int i = 0; i < pictures.length; i++) {
+                for (int i = 0; i < mBannerDatas.size(); i++) {
                     View child = llDot.getChildAt(i);
                     child.setBackgroundResource(i == currentItem ? R.drawable.dot_focus : R.drawable.dot_unfocus);
                 }
@@ -515,6 +590,7 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
+
         //发送延时消息，选中下一页
         handler.sendEmptyMessageDelayed(0, 3000);
     }
@@ -525,11 +601,28 @@ public class HomeFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             //收到消息，先选中下一页，然后再次发送延时消息
-            vpBannerHomeFragment.setCurrentItem(vpBannerHomeFragment.getCurrentItem() + 1);
+            mBannerViewpager.setCurrentItem(mBannerViewpager.getCurrentItem() + 1);
             handler.sendEmptyMessageDelayed(0, 3000);
         }
     };
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        MainActivity activity = (MainActivity) getActivity();
+//        String pickedCity = activity.mPickedCity;
+//
+//        if (pickedCity != null) {
+//            mCity.setText(pickedCity);
+//        }
+
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
+    }
 
     @Override
     public void onDestroyView() {

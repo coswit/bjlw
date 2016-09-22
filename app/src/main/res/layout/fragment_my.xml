@@ -154,6 +154,7 @@
         <include layout="@layout/default_line"/>
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/ll_my_share"
             android:layout_width="match_parent"
             android:layout_height="48dp"

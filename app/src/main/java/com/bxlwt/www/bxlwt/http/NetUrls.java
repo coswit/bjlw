@@ -48,4 +48,23 @@ public interface NetUrls {
     String HOME_HEADLINES ="/news/lists";
     //发现 http://app.bxlwt.com/api/index.php/faxian/lists
     String DISCOVERY ="/faxian/lists";
+    //我的积分 http://app.bxlwt.com/api/index.php/int/jifen?userid=193224
+    String INTERGRATE ="/int/jifen";
+    //消息 http://app.bxlwt.com/api/index.php/im/lists/?touserid=214821&type=%E7%B3%BB%E7%BB%9F%E6%B6%88%E6%81%AF
+    String MESSAGE ="/im/lists/";
+    //已开通城市 http://app.bxlwt.com/api/index.php/area/openarea
+    String OPNE_CITY = "/area/openarea";
+    //首页banner http://app.bxlwt.com/api/index.php/banner/index
+    String  HOME_BANNER = "/banner/index";
+    //搜索 主要词显示 http://app.bxlwt.com/api/index.php/search/lists
+    String SEARCH_KEYWORD_LIST = "/search/lists";
+    //搜索 关键词跳转 http://app.bxlwt.com/api/index.php/search/search?keyword=%E7%9B%9B%E4%B8%96
+    String SEARCH_KEYWORD_ACT = "/search/search";
+    String KEYWORD = "keyword";
+    //意见反馈 http://app.bxlwt.com/api/index.php/user/feedback/?userid=193224&title=
+    String ADVICE ="/user/feedback/";
+    String ADVICE_TITLE = "title";
+
+
+
 }

@@ -127,18 +127,28 @@ public class MyFragment extends Fragment {
                     mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
                 } else {
                     startActivity(new Intent(mContext, LoginAct.class));
-                   mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
                 }
                 break;
             case R.id.ll_my_message://我的消息
-                mIntent = new Intent(mContext, MyMessage.class);
-                startActivity(mIntent);
-                mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                if (mUserInfoBean != null) {
+                    mIntent = new Intent(mContext, MyMessage.class);
+                    startActivity(mIntent);
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                }else {
+                    startActivity(new Intent(mContext, LoginAct.class));
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                }
                 break;
             case R.id.ll_my_intergrate://我的积分
-                mIntent = new Intent(mContext, MyIntergrateAct.class);
-                startActivity(mIntent);
-                mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                if (mUserInfoBean != null) {
+                    mIntent = new Intent(mContext, MyIntergrateAct.class);
+                    startActivity(mIntent);
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                } else {
+                    startActivity(new Intent(mContext, LoginAct.class));
+                    mActivity.overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
+                }
                 break;
             case R.id.ll_my_share://分享有礼
                 break;

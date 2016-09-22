@@ -8,10 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/orange"
-        android:gravity="center_vertical"
-        >
+        android:gravity="center_vertical">
 
         <LinearLayout
+            android:id="@+id/ll_baseFragment_city"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
@@ -26,6 +26,7 @@
                 android:src="@drawable/location"/>
 
             <TextView
+                android:id="@+id/tv_baseFragment_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
@@ -89,9 +90,9 @@
 
         <LinearLayout
             android:id="@+id/ll_base_fail"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:orientation="vertical">
 

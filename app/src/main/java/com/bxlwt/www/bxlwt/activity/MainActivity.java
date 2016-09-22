@@ -23,19 +23,20 @@ public class MainActivity extends BaseActivity {
     private LayoutInflater mLayoutInflater;
     ImageView mTabIcon;
     TextView mTabTitle;
-    public static final String HOME_TAG ="home";
-    public static final String DISCOVERY_TAG ="discovery";
-    public static final String MY_TAG ="set";
+    public static final String HOME_TAG = "home";
+    public static final String DISCOVERY_TAG = "discovery";
+    public static final String MY_TAG = "set";
     private int[] mImages;
     private CharSequence[] mTitles;
     private Intent mIntent;
+    public String mPickedCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mLayoutInflater = LayoutInflater.from(this);
-        mTabContainer= (FrameLayout) findViewById(R.id.tabContainer);
+        mTabContainer = (FrameLayout) findViewById(R.id.tabContainer);
         mTabHost = (FragmentTabHost) findViewById(R.id.tabHost);
 
         initTab();
@@ -44,14 +45,14 @@ public class MainActivity extends BaseActivity {
 
     private void initTab() {
         String[] tag = new String[]{HOME_TAG, DISCOVERY_TAG, MY_TAG};
-        mTitles = new CharSequence[]{"优惠", "发现",  "我的",};
+        mTitles = new CharSequence[]{"优惠", "发现", "我的",};
 
 
         mTabHost.setup(this, getSupportFragmentManager(), R.id.tabContainer);
         mTabHost.getTabWidget().setDividerDrawable(R.color.white);
         Class fragments[] = {HomeFragment.class, DiscoveryFragment.class, MyFragment.class};
         //背景图片
-        mImages = new int[]{R.drawable.selector_ic_home,R.drawable.selector_ic_disc,R.drawable.selector_ic_my};
+        mImages = new int[]{R.drawable.selector_ic_home, R.drawable.selector_ic_disc, R.drawable.selector_ic_my};
         for (int i = 0; i < tag.length; i++) {
             View tabView = getTabWidgtView(i);
             TabHost.TabSpec tabSpec = mTabHost.newTabSpec(tag[i]).setIndicator(tabView);
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity {
 
     /**
      * 获取底部tab
+     *
      * @param i
      * @return
      */
@@ -74,13 +76,21 @@ public class MainActivity extends BaseActivity {
         return view;
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+//        mIntent =getIntent();
+//        mPickedCity = mIntent.getStringExtra(Keys.CITY_PICK);
+//
+//        Logger.d("城市" + mPickedCity);
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         mIntent = getIntent();
         int i = mIntent.getIntExtra(Keys.REGISTER_BACK, 10);
-        if (i==Keys.REGISTER_BACK_INTENT){
+        if (i == Keys.REGISTER_BACK_INTENT) {
             mTabHost.setCurrentTab(2);
         }
     }

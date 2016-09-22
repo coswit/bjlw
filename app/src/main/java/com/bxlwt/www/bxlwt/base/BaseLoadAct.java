@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bxlwt.www.bxlwt.MyApp;
@@ -26,6 +27,7 @@ public abstract class BaseLoadAct extends BaseActivity {
     public TextView mEmptyView;
     public ImageView mSubIcon;
     public Context mContext;
+    public RelativeLayout mTopBanner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public abstract class BaseLoadAct extends BaseActivity {
         mSubTitle = (TextView) findViewById(R.id.tv_baseLoad_subTitle);
         mSubIcon = (ImageView) findViewById(R.id.iv_baseLoad_subIcon);
         mEmptyView = (TextView) findViewById(R.id.tv_baseLoad_empty);
+        mTopBanner = (RelativeLayout) findViewById(R.id.rl_baseLoadAct_top);
 
         mContext = MyApp.getContext();
 

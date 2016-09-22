@@ -6,7 +6,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/orange">
@@ -16,21 +17,36 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
 
             android:src="@drawable/ic_revert"/>
 
-        <android.support.v7.widget.SearchView
-            android:id="@+id/sv_actSearch"
-            android:layout_width="256dp"
-            android:layout_height="wrap_content"
+        <EditText
+            android:paddingLeft="10dp"
+            android:hint="输入要搜索的内容"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/et_actSearch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/search_bar"/>
-    </RelativeLayout>
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_marginLeft="2dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="搜索"
+            android:background="@color/orange"
+            android:layout_alignParentRight="true"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
     <TextView
         android:layout_marginLeft="20dp"

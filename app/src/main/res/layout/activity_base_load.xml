@@ -5,6 +5,7 @@
               android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_baseLoadAct_top"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/orange">
@@ -43,6 +44,7 @@
             android:layout_alignParentRight="true">
 
             <ImageView
+                android:visibility="invisible"
                 android:id="@+id/iv_baseLoad_subIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

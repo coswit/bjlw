@@ -27,6 +27,13 @@ public interface Keys {
     String PROMOTION_TYPE = "1";
     //头条跳转时的html地址
     String  HOME_HEADLINES_HTML = "homeHeadlinesHtmlAddress";
-
+    //发现跳转详情页面
+    String DISCOVERY_DETAIL_HTML ="discoveryDetailHtml";
+    //首页banner跳转详情
+    String HOME_BANNER_ITEM = "homeBannerItem";
+    //选择城市后跳转主页
+    String CITY_PICK = "cityPick";
+    //搜索关键字跳转
+    String SEARCH_KEYWORD ="searchKeyword";
 
 }

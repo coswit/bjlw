@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.bxlwt.www.bxlwt.MyApp;
 import com.bxlwt.www.bxlwt.R;
+import com.bxlwt.www.bxlwt.activity.CityPick;
 import com.bxlwt.www.bxlwt.activity.SearchAct;
 
 
@@ -27,8 +28,10 @@ public abstract class BaseFragment extends Fragment {
     public Context mContext;
     public FragmentActivity mActivity;
     public TextView mTitle;
+    public TextView mCity;
     public LinearLayout mLoading;
     public LinearLayout mFailLoading;
+    private LinearLayout mCityPick;
 
 
     /**
@@ -46,8 +49,10 @@ public abstract class BaseFragment extends Fragment {
         View view = View.inflate(mContext, R.layout.fragment_base, null);
         mContainer = (FrameLayout) view.findViewById(R.id.fragment_base_container);
         mTitle = (TextView) view.findViewById(R.id.tv_baseFragment_title);
+        mCity = (TextView) view.findViewById(R.id.tv_baseFragment_city);
         mLoading = (LinearLayout) view.findViewById(R.id.ll_base_loading);
         mFailLoading = (LinearLayout) view.findViewById(R.id.ll_base_fail);
+        mCityPick = (LinearLayout)view.findViewById(R.id.ll_baseFragment_city);
 
         //加载失败后重新加载数据
         mFailLoading.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +69,13 @@ public abstract class BaseFragment extends Fragment {
                 startActivity(intent);
                 mActivity.overridePendingTransition(R.anim.enter_anim,R.anim.exit_anim);
 
+            }
+        });
+        mCityPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext,CityPick.class));
+                mActivity.overridePendingTransition(R.anim.out_enter_anim,R.anim.out_exit_anim);
             }
         });
         mView = initView();//fragment自身要展示的view

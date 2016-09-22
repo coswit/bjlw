@@ -46,6 +46,12 @@
         <activity android:name=".activity.HomeItemAct" android:screenOrientation="portrait"/>
         <activity android:name=".activity.HomeClassfyAct" android:screenOrientation="portrait"/>
         <activity android:name=".activity.HeadlinesContentAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DiscveryItemAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CityPick" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.BannerItemAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SearchKeywordAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AboutusAct" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AndviceAct" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

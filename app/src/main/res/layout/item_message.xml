@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:paddingLeft="@dimen/common_padding_size"
+              android:paddingRight="@dimen/common_padding_size"
+              android:background="@color/defaul_bg"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@mipmap/ic_message"
+        android:layout_width="25dp"
+        android:layout_height="25dp"/>
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/shape_set_edit"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_item_message"
+        android:textColor="@color/default_textcolor"
+        android:text="消息消息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
