@@ -6,7 +6,13 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!--微信相关权限-->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 蓝牙分享所需的权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -21,7 +27,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.MainActivity" android:launchMode="singleTask" android:screenOrientation="portrait">
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -30,28 +39,70 @@
         </activity>
         <activity
             android:name=".activity.LoginAct"
-            android:launchMode="singleTask" android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.RegisterAct"
-            android:launchMode="singleTask" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SearchAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HelperAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SetAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MyCouponAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MyMessage" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MyIntergrateAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SetUserInfoAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SetEditNickname" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SetEditPhone" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HomeItemAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HomeClassfyAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HeadlinesContentAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.DiscveryItemAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.CityPick" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.BannerItemAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SearchKeywordAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AboutusAct" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AndviceAct" android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SearchAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HelperAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SetAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MyCouponAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MyMessage"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MyIntergrateAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SetUserInfoAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SetEditNickname"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SetEditPhone"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HomeItemAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HomeClassfyAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HeadlinesContentAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.DiscveryItemAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.CityPick"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.BannerItemAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SearchKeywordAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AboutusAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AndviceAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"/>
     </application>
 
 </manifest>

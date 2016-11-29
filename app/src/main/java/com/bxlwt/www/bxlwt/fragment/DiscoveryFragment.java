@@ -124,7 +124,7 @@ public class DiscoveryFragment extends BaseFragment {
                 holder.mTitle.setText(mDatas.get(position).getTitle());
                 holder.mDiscription.setText(mDatas.get(position).getDescription());
                 holder.mBeRead.setText(mDatas.get(position).getHits()+" 人浏览");
-                Glide.with(mContext).load(NetUrls.HOME_LIST_IMAGE+mDatas.get(position).getThumb());
+                Glide.with(mContext).load(NetUrls.HOME_LIST_IMAGE+mDatas.get(position).getThumb()).into(holder.mImage);
             }
 
 //            //条目点击跳转

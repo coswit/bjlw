@@ -1,38 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/defaul_bg"
-              android:orientation="vertical"
-              android:paddingLeft="@dimen/common_padding_size"
-              android:paddingRight="@dimen/common_padding_size">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/defaul_bg"
+                android:orientation="vertical"
+                tools:context="com.bxlwt.www.bxlwt.activity.CityPick">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:paddingTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:gravity="center_vertical"
-        android:text="已开通城市"
-        android:textColor="#999999"
-        android:textSize="16sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="13dp"
-        android:paddingLeft="12dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.zhy.view.flowlayout.TagFlowLayout
-            android:id="@+id/tag_cityPick"
+        <TextView
+            android:paddingLeft="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:max_select="1"/>
+            android:gravity="center_vertical"
+            android:paddingTop="20dp"
+            android:text="已开通城市"
+            android:textColor="#696767"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="13dp"
+            android:paddingLeft="12dp">
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/tag_cityPick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:max_select="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+           android:layout_marginBottom="5dp"
+            android:textColor="#696767"
+            android:textSize="16sp"
+            android:text="选择城市"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_ccc"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_sticky_example"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"/>
+
+                <include layout="@layout/layout_sticky_header_view"/>
+            </FrameLayout>
+
+            <com.bxlwt.www.bxlwt.city.CircleTextView
+                android:id="@+id/my_circle_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fl_slide_container"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"/>
+<!--
+    <com.bxlwt.www.bxlwt.city.MySlideView
+        android:id="@+id/my_slide_view"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"/>-->
 
-
-</LinearLayout>
+</RelativeLayout>

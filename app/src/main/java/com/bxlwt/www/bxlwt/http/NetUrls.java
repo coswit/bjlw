@@ -64,6 +64,17 @@ public interface NetUrls {
     //意见反馈 http://app.bxlwt.com/api/index.php/user/feedback/?userid=193224&title=
     String ADVICE ="/user/feedback/";
     String ADVICE_TITLE = "title";
+    //所有城市 http://app.bxlwt.com/api/index.php/area/area
+    String ALL_CITYS = "/area/area";
+    //微信登录 http://app.bxlwt.com/api/index.php/user/login_open?opentype=wechat&usertype=app
+    //              &openid=1&headimgurl=1&nickname=1&unionid=1&country=1&province=1&sex=1&from=1
+    String WX_LOGIN = "/user/login_open";
+    //获取微信的用户信息 https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID
+    String WX_USER_INFO = "https://api.weixin.qq.com/sns/userinfo";
+    String WX_TOKEN = "access_token";
+    String WX_OPENID = "openid";
+
+
 
 
 
