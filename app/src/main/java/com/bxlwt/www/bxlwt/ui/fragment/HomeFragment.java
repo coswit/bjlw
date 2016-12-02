@@ -1,4 +1,4 @@
-package com.bxlwt.www.bxlwt.fragment;
+package com.bxlwt.www.bxlwt.ui.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -47,9 +47,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-
-
 
 public class HomeFragment extends BaseFragment {
 

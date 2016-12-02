@@ -22,6 +22,7 @@ import com.bxlwt.www.bxlwt.base.BaseLoadAct;
 import com.bxlwt.www.bxlwt.bean.HomeItemDetailBean;
 import com.bxlwt.www.bxlwt.bean.MessageBean;
 import com.bxlwt.www.bxlwt.http.NetUrls;
+import com.bxlwt.www.bxlwt.ui.activity.MainActivity;
 import com.orhanobut.logger.Logger;
 
 import org.xutils.common.Callback;

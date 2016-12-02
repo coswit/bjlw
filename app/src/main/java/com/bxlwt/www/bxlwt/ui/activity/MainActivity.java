@@ -1,5 +1,6 @@
-package com.bxlwt.www.bxlwt.activity;
+package com.bxlwt.www.bxlwt.ui.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
@@ -13,9 +14,9 @@ import android.widget.TextView;
 import com.bxlwt.www.bxlwt.R;
 import com.bxlwt.www.bxlwt.Utils.Keys;
 import com.bxlwt.www.bxlwt.base.BaseActivity;
-import com.bxlwt.www.bxlwt.fragment.DiscoveryFragment;
-import com.bxlwt.www.bxlwt.fragment.HomeFragment;
-import com.bxlwt.www.bxlwt.fragment.MyFragment;
+import com.bxlwt.www.bxlwt.ui.fragment.DiscoveryFragment;
+import com.bxlwt.www.bxlwt.ui.fragment.HomeFragment;
+import com.bxlwt.www.bxlwt.ui.fragment.MyFragment;
 
 public class MainActivity extends BaseActivity {
     FrameLayout mTabContainer;
@@ -31,6 +32,11 @@ public class MainActivity extends BaseActivity {
     private Intent mIntent;
     public String mPickedCity;
 
+
+    public static void startAction(Activity activity) {
+        activity.startActivity(new Intent(activity,MainActivity.class));
+        activity.overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

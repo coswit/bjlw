@@ -1,4 +1,4 @@
-package com.bxlwt.www.bxlwt.fragment;
+package com.bxlwt.www.bxlwt.ui.fragment;
 
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;

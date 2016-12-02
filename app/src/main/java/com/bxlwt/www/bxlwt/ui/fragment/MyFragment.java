@@ -1,4 +1,4 @@
-package com.bxlwt.www.bxlwt.fragment;
+package com.bxlwt.www.bxlwt.ui.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import com.bxlwt.www.bxlwt.MyApp;
 import com.bxlwt.www.bxlwt.R;
 import com.bxlwt.www.bxlwt.activity.HelperAct;
 import com.bxlwt.www.bxlwt.activity.LoginAct;
-import com.bxlwt.www.bxlwt.activity.MainActivity;
+import com.bxlwt.www.bxlwt.ui.activity.MainActivity;
 import com.bxlwt.www.bxlwt.activity.MyCouponAct;
 import com.bxlwt.www.bxlwt.activity.MyIntergrateAct;
 import com.bxlwt.www.bxlwt.activity.MyMessage;

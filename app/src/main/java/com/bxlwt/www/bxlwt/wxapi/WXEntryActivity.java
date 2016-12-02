@@ -14,7 +14,7 @@ import com.bxlwt.www.bxlwt.Utils.Keys;
 import com.bxlwt.www.bxlwt.Utils.SharedPreferencesUtil;
 import com.bxlwt.www.bxlwt.Utils.ToastUtil;
 import com.bxlwt.www.bxlwt.activity.LoginAct;
-import com.bxlwt.www.bxlwt.activity.MainActivity;
+import com.bxlwt.www.bxlwt.ui.activity.MainActivity;
 import com.bxlwt.www.bxlwt.bean.UserInfoBean;
 import com.bxlwt.www.bxlwt.bean.WXAcessTokenBean;
 import com.bxlwt.www.bxlwt.bean.WxUserinfoBean;

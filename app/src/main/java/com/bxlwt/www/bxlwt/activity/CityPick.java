@@ -21,6 +21,7 @@ import com.bxlwt.www.bxlwt.city.City;
 import com.bxlwt.www.bxlwt.city.CityAdapter;
 import com.bxlwt.www.bxlwt.city.MySlideView;
 import com.bxlwt.www.bxlwt.http.NetUrls;
+import com.bxlwt.www.bxlwt.ui.activity.MainActivity;
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.orhanobut.logger.Logger;
 import com.zhy.view.flowlayout.FlowLayout;
