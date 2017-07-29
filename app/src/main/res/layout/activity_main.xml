@@ -7,16 +7,16 @@
         android:id="@+id/tabContainer"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"></FrameLayout>
+        android:layout_height="0dp"/>
 
     <View
         android:background="@color/default_line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>
-    <android.support.v4.app.FragmentTabHost
+    <com.bxlwt.www.bxlwt.view.FragmentTabHost
         android:background="@color/white"
         android:id="@+id/tabHost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </android.support.v4.app.FragmentTabHost>
+    </com.bxlwt.www.bxlwt.view.FragmentTabHost>
 </LinearLayout>

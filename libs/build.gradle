@@ -56,8 +56,9 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     //okhttp
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
-
     compile 'com.jakewharton:butterknife:8.2.1'
+    //metarial design
+    compile 'com.android.support:design:24.1.1'
 }
 
 

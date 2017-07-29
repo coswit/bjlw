@@ -80,6 +80,8 @@ public abstract class BaseFragment extends Fragment {
         });
         mView = initView();//fragment自身要展示的view
         mContainer.addView(mView);
+
+        initData();
         return view;
     }
 
@@ -113,7 +115,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        initData();
+//       initData();
     }
 
     public void showLoadingView() {

@@ -3,7 +3,6 @@ package com.bxlwt.www.bxlwt.ui.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -17,11 +16,12 @@ import com.bxlwt.www.bxlwt.base.BaseActivity;
 import com.bxlwt.www.bxlwt.ui.fragment.DiscoveryFragment;
 import com.bxlwt.www.bxlwt.ui.fragment.HomeFragment;
 import com.bxlwt.www.bxlwt.ui.fragment.MyFragment;
+import com.bxlwt.www.bxlwt.view.FragmentTabHost;
 
 public class MainActivity extends BaseActivity {
     FrameLayout mTabContainer;
-    FragmentTabHost mTabHost;
-    private LayoutInflater mLayoutInflater;
+    FragmentTabHost   mTabHost;
+    public LayoutInflater mLayoutInflater;
     ImageView mTabIcon;
     TextView mTabTitle;
     public static final String HOME_TAG = "home";
@@ -30,7 +30,6 @@ public class MainActivity extends BaseActivity {
     private int[] mImages;
     private CharSequence[] mTitles;
     private Intent mIntent;
-    public String mPickedCity;
 
 
     public static void startAction(Activity activity) {
@@ -43,6 +42,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         mLayoutInflater = LayoutInflater.from(this);
         mTabContainer = (FrameLayout) findViewById(R.id.tabContainer);
+//        mTabHost = (com.bxlwt.www.bxlwt.view.FragmentTabHost) findViewById(R.id.tabHost);
         mTabHost = (FragmentTabHost) findViewById(R.id.tabHost);
 
         initTab();

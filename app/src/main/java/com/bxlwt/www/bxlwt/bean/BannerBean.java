@@ -1,11 +1,15 @@
 package com.bxlwt.www.bxlwt.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by zhengj on 2016/9/20.
  */
-public class BannerBean {
+public class BannerBean implements Serializable{
 
     /**
      * code : 200
@@ -47,7 +51,7 @@ public class BannerBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable{
         private String imgurl;
         private String title;
         private String url;
@@ -74,6 +78,16 @@ public class BannerBean {
 
         public void setUrl(String url) {
             this.url = url;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+
         }
     }
 }

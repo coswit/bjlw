@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bxlwt.www.bxlwt.R;
 
 import butterknife.BindView;
-import coswit.com.github.libs.BaseActivity;
+import coswit.com.github.libs.base.BaseActivity;
 
 /**
  * Created by zhengj on 2016/12/2.

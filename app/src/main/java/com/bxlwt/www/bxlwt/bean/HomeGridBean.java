@@ -1,11 +1,12 @@
 package com.bxlwt.www.bxlwt.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by zhengj on 2016/9/18.
  */
-public class HomeGridBean {
+public class HomeGridBean implements Serializable{
 
 
     /**
@@ -51,7 +52,7 @@ public class HomeGridBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         private String id;
         private String catename;
         private String parentid;

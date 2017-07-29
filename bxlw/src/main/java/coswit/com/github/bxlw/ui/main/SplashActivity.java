@@ -1,4 +1,4 @@
-package coswit.com.github.bxlw.ui;
+package coswit.com.github.bxlw.ui.main;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -8,9 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
-import coswit.com.github.bxlw.MainActivity;
 import coswit.com.github.bxlw.R;
-import coswit.com.github.libs.BaseActivity;
+import coswit.com.github.libs.base.BaseActivity;
 
 /**
  * Created by zhengj on 2016/12/2.

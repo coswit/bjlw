@@ -119,8 +119,9 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected View initView() {
-        View view = View.inflate(mContext, R.layout.fragment_home, null);
         mActivity = getActivity();
+//        View view = View.inflate(mContext, R.layout.fragment_home, null);
+        View view = mActivity.getLayoutInflater().inflate(R.layout.fragment_home, null);
         mTitle.setText(R.string.app_name);
         ButterKnife.bind(this, view);
 
@@ -132,6 +133,39 @@ public class HomeFragment extends BaseFragment {
         return view;
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        Logger.d("走oncreate");
+//        if (savedInstanceState != null) {
+//           mGridBean = (HomeGridBean) savedInstanceState.getSerializable("mGridBean");
+//            Logger.d("保存数据"+mGridBean.getData().get(0).getCatename());
+//            mBannerDatas =savedInstanceState.getParcelableArrayList("mBannerDatas");
+//        }
+
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+//        outState.putSerializable("mGridBean",mGridBean);
+//        outState.putParcelableArrayList("mBannerDatas", (ArrayList<? extends Parcelable>) mBannerDatas);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
+    }
 
     @Override
     public void initData() {
@@ -278,6 +312,10 @@ public class HomeFragment extends BaseFragment {
             }
             viewFlipper.startFlipping();
             initBannerDatas();
+//            if (mBannerDatas == null) {
+//
+//                initBannerDatas();
+//            }
 
         }
 
@@ -393,6 +431,9 @@ public class HomeFragment extends BaseFragment {
                             vpHomeTab.setAdapter(new PagerTabAdapter(pagers, titles));
                             tabHome.setupWithViewPager(vpHomeTab);
                             initGridDatas();
+//                            if (mGridBean == null) {
+//                                initGridDatas();
+//                            }
 
                         }
                     }
@@ -500,6 +541,8 @@ public class HomeFragment extends BaseFragment {
 
 
 
+
+
     class MyPagerAdapter extends PagerAdapter {
 
         @Override
@@ -532,13 +575,13 @@ public class HomeFragment extends BaseFragment {
             });
             return imageView;
         }
-
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
         }
-    }
 
+
+    }
 
     /**
      * 轮播图
@@ -557,7 +600,7 @@ public class HomeFragment extends BaseFragment {
             params.leftMargin = 18;
             dotView.setLayoutParams(params);
             //给view设置背景图片，就是黑点的图片
-            dotView.setBackgroundResource(R.drawable.dot_unfocus);
+            dotView.setBackgroundResource(i==0 ?R.drawable.dot_focus:R.drawable.dot_unfocus);
             //将view对象添加到ll_dot布局中
             llDot.addView(dotView);
         }
@@ -592,6 +635,7 @@ public class HomeFragment extends BaseFragment {
         handler.sendEmptyMessageDelayed(0, 3000);
     }
 
+
     //图片轮播
     private Handler handler = new Handler() {
         @Override
@@ -602,8 +646,6 @@ public class HomeFragment extends BaseFragment {
             handler.sendEmptyMessageDelayed(0, 3000);
         }
     };
-
-
     @Override
     public void onResume() {
         super.onResume();
@@ -614,11 +656,6 @@ public class HomeFragment extends BaseFragment {
 //            mCity.setText(pickedCity);
 //        }
 
-    }
-    @Override
-    public void onStop() {
-        super.onStop();
-        handler.removeCallbacksAndMessages(null);
     }
 
     @Override

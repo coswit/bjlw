@@ -1,1 +1,1 @@
-include ':app', ':libs', ':bxlw'
+include ':app', ':libs', ':bxlw', ':demo'
